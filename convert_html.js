@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var archieml = require('../archieml.js');
+var archieml = require('archieml');
 var url = require('url');
 var htmlparser = require('htmlparser2');
 var Entities = require('html-entities').AllHtmlEntities;
@@ -71,7 +71,7 @@ var handler = new htmlparser.DomHandler(function(error, dom) {
 
 
 // get html file
-const body = fs.readFileSync('../input.html');
+const body = fs.readFileSync('input.html');
 
 // build parser
 var parser = new htmlparser.Parser(handler);

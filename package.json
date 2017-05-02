@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/cirlabs/archieml-js/issues"
   },
-  "homepage": "https://github.com/cirlabs/archieml-js#readme"
+  "homepage": "https://github.com/cirlabs/archieml-js#readme",
+  "dependencies": {
+    "archieml": "^0.4.2",
+    "html-entities": "^1.2.1",
+    "htmlparser2": "^3.9.2",
+    "url": "^0.11.0"
+  }
 }
