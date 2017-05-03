@@ -20,6 +20,7 @@
     "archieml": "^0.4.2",
     "html-entities": "^1.2.1",
     "htmlparser2": "^3.9.2",
-    "url": "^0.11.0"
+    "url": "^0.11.0",
+    "yargs": "^7.1.0"
   }
 }

@@ -5,6 +5,25 @@ var url = require('url');
 var htmlparser = require('htmlparser2');
 var Entities = require('html-entities').AllHtmlEntities;
 var fs = require('fs');
+var yargs = require('yargs');
+
+argv = yargs.command(['convert <input> <output>', '*'], 'specify input and output files', {
+  input: {
+    alias: 'i',
+    default: 'input.html'
+  },
+  output: {
+    alias: 'o',
+    default: 'output.json'
+  }
+})
+  .help()
+  .argv;
+
+// get filenames
+var INFILE = argv.input;
+var OUTFILE = argv.output;
+
 
 var handler = new htmlparser.DomHandler(function(error, dom) {
   var tagHandlers = {
@@ -66,12 +85,12 @@ var handler = new htmlparser.DomHandler(function(error, dom) {
 
   var parsed = archieml.load(parsedText);
 
-  fs.writeFileSync("output.json", JSON.stringify(parsed));
+  fs.writeFileSync(OUTFILE, JSON.stringify(parsed));
 });
 
 
 // get html file
-const body = fs.readFileSync('input.html');
+const body = fs.readFileSync(INFILE);
 
 // build parser
 var parser = new htmlparser.Parser(handler);
